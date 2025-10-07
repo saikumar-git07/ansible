@@ -11,6 +11,6 @@
   tasks:
   - name: check preference
     Vars:
-      WISHES: Morning from PLAY variable
+      WISHES: "Morning from PLAY variable"
     ansible.builtin.debug:
       msg: "Hello, Good {{WISHES}}"
