@@ -49,10 +49,26 @@
     Trainer: sivakumar
     Duration: 3.5months
   tasks:
-   - name: before converting 
+   - name: before convert 
      ansible.builtin.debug:
-      msg: "before converting {{ my_dict }}"
-   - name: after converting 
+      msg: "before convert {{ my_dict }}"
+   - name: after convert 
      ansible.builtin.debug:
-      msg: "after converting {{ my_dict | dict2items }}"
+      msg: "after convert {{ my_dict | dict2items }}"
+    
+- name: convert items to dictionary
+  hosts: localhost
+  vars:
+   my_list:
+      - {'key': 'Course', 'value': 'ansible'}
+      - {'key': 'Trainer', 'value': 'sivakumar'}
+      - {'key': 'Duration', 'value': '3.5months'}
+  tasks:
+   - name: before convert 
+     ansible.builtin.debug:
+      msg: "before convert {{ my_list }}"
+   - name: after convert 
+     ansible.builtin.debug:
+      msg: "after convert {{ my_list | items2dict }}"
+
 
