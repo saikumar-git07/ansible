@@ -40,3 +40,19 @@
   - name: print min and max
     ansible.builtin.debug:
       msg: " min age: {{ages | min }}, max age: {{ ages | max }}"
+
+- name: convert dictionary into items/lists
+  hosts: localhost
+  vars:
+   my_dict:
+    Course: ansible
+    Trainer: sivakumar
+    Duration: 3.5months
+  tasks:
+   - name: before converting 
+     ansible.builtin.debug:
+      msg: "before converting {{ my_dict }}"
+   - name: after converting 
+     ansible.builtin.debug:
+      msg: "after converting {{ my_dict | dict2items }}"
+
